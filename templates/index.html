@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Customer Query Engine </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            max-width: 600px;
+            margin: auto;
+        }
+        .input-area, .output-area {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            height: 100px;
+            margin-bottom: 20px;
+            resize: vertical;
+        }
+        .output-area {
+            font-size: 18px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Customer Query Engine Using Multi AI Agents</h1>
+    <div class="container">
+        <form method="post" class="input-area">
+            <textarea name="query" placeholder="Enter your query here..."></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if result %}
+        <div class="output-area">
+            <h3>Results</h3>
+            <p><strong>Category:</strong> {{ result['Category'] }}</p>
+            <p><strong>Sentiment:</strong> {{ result['Sentiment'] }}</p>
+            <p><strong>Response:</strong> {{ result['Response'] }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
